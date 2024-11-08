@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArgenTravel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/iconos/icono2-removebg-preview.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/ffa1940001.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <!-- Navbar -->
-    <header>
-    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <header id="Arriba">
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">ArgenTravel</a>
+          <img class="logo-header" src="assets/img/iconos/icono2-removebg-preview.ico" width="40" height="40" alt="">
+          <a class="navbar-brand argentravel" href="#">ArgenTravel</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#Viajes">Viajes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li> -->
+                <a class="nav-link" href="#Preguntas">Preguntas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Consultas">Consultas</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="#Contacto">Contacto</a>
+              </li>  
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
           </div>
         </div>
@@ -73,14 +86,250 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      
+    <!-- viaje -->
     <section>
-        <h1>Nuestros Viajes</h1>
+        <h1 class="text-center mt-5 mb-4 fonts" id="Viajes">Nuestros Viajes</h1>
+
+        <div class="d-flex justify-content-around text-center">
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/salta1.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Visita Salta</h5>
+              <p class="card-text">Conoce el tren de las nubes!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/jujuy4.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Conoce Jujuy</h5>
+              <p class="card-text">Conoce el Cerro de los siete colores!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/peritomoreno3.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Visita Perito Moreno</h5>
+              <p class="card-text">Ven a conocer este Increible Glaciar con nosotros!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="d-flex justify-content-around text-center">
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/bariloche2.jpg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Conoce Bariloche</h5>
+              <p class="card-text">Conoce el majestuoso Hotel Llao Llao en medio del lago!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/iguazu.jpg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Visita Iguazu</h5>
+              <p class="card-text">Conoce la septima maravilla del mundo, las Cataratas del Iguazu!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/fitz2.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Conoce El Chaltén</h5>
+              <p class="card-text">Disfruta del maravilloso Fitz Roy!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="d-flex justify-content-around text-center">
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/Les_Eclaireurs_Lighthouse.jpg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Visita Ushuaia</h5>
+              <p class="card-text">Conoce el imponente Faro del Fin del mundo!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/madryn2.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Conoce Puerto Madryn</h5>
+              <p class="card-text">Conoce estas increibles ballenas en Puerto Madryn!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+          <div class="card" style="width: 22rem;">
+            <img src="assets/img/mendoza4.jpeg" class="card-img-top card-img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Visita Mendoza</h5>
+              <p class="card-text">Conoce La alucinante Cordillera!</p>
+              <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
+            </div>
+          </div>
+        </div>
     </section>
-    <section></section>
-    <section></section>
+
+    <!-- Preguntas Frecuentes -->
+
+<section>
+
+  <h1 id="Preguntas" class="pack1 text-center fonts  mb-5">Preguntas frecuentes</h1>
+  <div class="preguntas container">
+
+  <div class="pack2">
+
+    <!-- <img _ngcontent-fpe-c121="" width="15" src="https://almundo-com-res.cloudinary.com/image/upload/v1583446826/home-v3/path.png"> -->
+    <h3>¿Cómo son los paquetes turísticos?</h3>
+  <p>Un paquete incluye el pasaje aéreo más el hospedaje pero también podrás encontrar paquetes que incluyan traslados, asistencia médica y actividades. Reservar todos los productos en conjunto te permite acceder a precios más económicos.</p>
+  </div>
+
+  <div class="pack3">
+    <h3>¿Cómo conseguir paquetes de viajes baratos?</h3>
+    <p>Para conseguir paquetes de viajes baratos es recomendable contratarlo con la mayor antelación posible, ya que mas cerca a la fecha del viaje los servicios tienden a aumentar sus tarifas, debido generalmente a su menor disponibilidad. Otra opción es viajar en la temporada baja de los destinos y evitar viajar los fin de semana largos, o bien contratarlos con antelación.</p>
+  </div>
+
+  <div class="pack4">
+    <h3>¿Por qué elegir un Paquete All Inclusive?</h3>
+    <p>Nuestros viajeros eligen paquetes all-inclusive por la comodidad, la previsibilidad financiera y la oportunidad de disfrutar de una experiencia vacacional sin complicaciones. Todo está incluido, lo que simplifica la planificación del viaje. Este tipo de paquetes se adapta bien a aquellos que buscan una experiencia relajante y sin preocupaciones.</p>
+  </div>
+
+  <div class="pack5">
+    <h3>¿Qué es un Paquete Recomendado?</h3>
+    <p>Los paquetes recomendados son paquetes armados, que no solo cuentan con vuelos y alojamiento, sino que tambien con otros servicios, los cuales pueden ser traslados, excursiones o asistencia al viajero entreo otros. Los paquetes recomendados generalmente resultan más economicos y facilita al viajero, contartar antes de su viaje la mayor cantidad de servicios.</p>
+  </div>
+
+  <div class="pack6">
+    <h3>¿Cómo se puede pagar un paquete turístico?</h3>
+    <p>Podés pagar tu paquete turístico con tarjeta de débito, crédito, combinar ambas o transferencia en dólares ahorrando hasta un 30% evitando el impuesto país y la percepción RG 4815, conoce mas sobre las formas de pago.</p>
+  </div>
+
+  <div class="pack7">
+    <h3>¿Cómo aplicar un código de descuento?</h3>
+    <p>Luego de seleccionar tu paquete debes ingresar el método de pago. En la parte superior hay un apartado de descuentos, y presionando el botón INGRESAR podrás aplicar tu descuento en caso que sea válido.</p>
+  </div>
+
+</div>
+</section>
+
+  <section>
+    <div  class="container mt-3 mb-5 bg-white p-3 rounded col-sm-8 col-lg-6 col-xl-5" id="Consultas">
+   <h1 class="text-center fonts">Consultas!</h1>
+<form action="https://formspree.io/f/mldejdlo" method="post">
+   <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nombre:</label>
+    <input type="text" name="nombre" class="form-control" required id="formGroupExampleInput" placeholder="Coloca tu Nombre aquí">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput5" class="form-label">Apellido:</label>
+    <input type="text" name="apellido" class="form-control" required id="formGroupExampleInput5" placeholder="Coloca tu Apellido aquí">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Correo Electronico</label>
+    <input type="email" name="email" class="form-control" required id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput3" class="form-label">Tu Mensaje:</label>
+    <!-- <input type="text" name="mensaje" class="form-control" required  id="formGroupExampleInput3" cols="30" rows="10" placeholder="Tu mensaje aqui"> -->
+    <textarea type="text" name="mensaje" class="form-control" required  id="formGroupExampleInput3" cols="5" placeholder="Tu mensaje aqui"></textarea>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <button type="reset" class="btn btn-danger">Resetear</button>
+  </div>
+</form>
+</div>
+    </section>
+    
 </main>
-<footer>
+<footer class="bg-dark-subtle mt-5 py-2">
+  <div class="container-fluid text-center footer">
+      <div class="row mx-md-5">
+          <div class="col-sm-3 text-sm-start mt-2">
+              <h4>ArgenTravel</h4>
+              <div><a href="https://kangoo2021.github.io/Portfolio-CV/" target="_blank">Sergio Muñoz</a></div>
+              <div>
+                <h6 class="copyright">&copy; 2024</h6>
+                <h6 class="copyright">desarrollado por Sergio Muñoz</h6>
+              </div>
+          </div>
+          <div class="col-sm-3 text-sm-start my-2">
+              <h4>Contacto</h4>
+              <div>
+                  <a href="#" class="ubicacion" data-bs-toggle="modal" data-bs-target="#exampleModal1">Av. de Mayo 623, CABA.
+                  </a>
+              </div>
+              <div id="Contacto">
+                  <a href="mailto:ser2004munoz@yahoo.com.ar">argentravel@gmail.com</a>
+              </div>
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel1">Ubicacion</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                  aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2682.7343215334536!2d-58.37811559174317!3d-34.608954863955724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad3b028af3f%3A0x4430e45eda385df1!2sHotel%20Avenida!5e0!3m2!1ses-419!2sar!4v1730424242046!5m2!1ses-419!2sar" 
+                            width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="col-sm-3 text-sm-start my-2">
+              <div>
+                  <h4>Más información</h4>
+              </div>
+              <div><a href="#">Nosotros</a></div>
+              <div><a href="#">Preguntas frecuentes</a></div>
+              <div><a href="#">Políticas de privacidad</a></div>
+              <div><a href="#">Terminos y condiciones</a></div>
+          </div>
+          <div class="col-sm-3 text-sm-start my-2">
+              <div>
+                  <h4>Seguinos en las redes</h4>
+              </div>
+              <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook fa-xl"
+                      style="color: #000000;"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram fa-xl"
+                      style="color: #000000;"></i></a>
+              <a href="https://twitter.com/?lang=es" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"
+                      style="color: #000000;"></i></a>
+              <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube fa-xl"
+                      style="color: #000000;"></i></a>
+              <a href="https://www.tiktok.com/es/" target="_blank"><i class="fa-brands fa-tiktok fa-xl"
+                      style="color: #000000;"></i></a>
+              <div>
+                  <h4 class="my-2">Medios de Pago</h4>
+              </div>
+              <a href="https://www.visa.com.ar/" target="_blank"><i class="fa-brands fa-cc-visa fa-xl"
+                      style="color: #000000;"></i></a>
+
+              <a href="https://www.mastercard.com.ar/es-ar.html" target="_blank"><i
+                      class="fa-brands fa-cc-mastercard fa-xl" style="color: #000000;"></i></a>
+
+              <a href="https://www.dinersclub.com/" target="_blank"><i class="fa-brands fa-cc-diners-club fa-xl"
+                      style="color: #000000;"></i></a>
+
+              <a href="https://www.paypal.com/ar/home?locale.x=es_AR" target="_blank"><i
+                      class="fa-brands fa-cc-paypal fa-xl" style="color: #000000;"></i></a>
+          </div>
+      </div>
+  </div>
 </footer>
+<a href="#Arriba" class="ir-arriba">
+  <span class="fa-stack">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+  </span>
+</a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
