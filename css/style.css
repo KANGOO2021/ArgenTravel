@@ -406,5 +406,9 @@ font-size: 18px;
         border: 0 !important;
     }
 
+    .fonts:hover {
+       color: initial;
+      }
+
   
 }
