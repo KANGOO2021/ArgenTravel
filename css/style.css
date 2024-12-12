@@ -389,7 +389,13 @@ font-size: 18px;
         margin-right: auto;
     }
 
+    .boton-api {
+        background-color: #ca1b0f;
+        border-radius: 5%;
+        padding: 0px 10px;
+        color: rgb(0, 0, 0) !important;
+     
+    }
 
-
-   
+  
 }

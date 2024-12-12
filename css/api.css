@@ -27,3 +27,12 @@ span {
     color: #fff;
     background: #f00;
 }
+
+
+@media (max-width: 576px) {
+
+   
+    select{
+        width: 80%;
+    }
+}
