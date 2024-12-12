@@ -397,5 +397,14 @@ font-size: 18px;
      
     }
 
+    .navbar-toggler:focus {
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .navbar-toggler {
+        border: 0 !important;
+    }
+
   
 }
