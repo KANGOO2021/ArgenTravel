@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArgenTravel</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/pop_up.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/iconos/icono2-removebg-preview.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/ffa1940001.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -38,11 +41,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#Contacto">Contacto</a>
             </li>
+            <li class="nav-item"><a class="nav-link ms-3 boton-api" aria-current="page"
+              href="/pages/api.html">API</a>
+            </li>
           </ul>
+
+         
           <form class="d-flex" role="search">
+            
             <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
+          
         </div>
       </div>
     </nav>
@@ -94,89 +104,179 @@
     </div>
 
     <!-- viaje -->
-    <section>
-      <h1 class="text-center mt-5 mb-4 fonts" id="Viajes">Nuestros Viajes</h1>
+    <section class="mt-4">
+        <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true"
+                    style="color: black; background-color: white;">
+                    <h1 id="Viajes" class="viajes-titulo mb-3 fonts">Nuestros Viajes</h1>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link mt-2" id="pills-profile-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                    aria-selected="false" style="color: black; background-color: white;">
+                    <i id="carrito" class="fa-solid fa-cart-shopping fa-xl" style="color: #e4dc07;"></i>
+                    <span id="cuenta-carrito"
+                        class="position-absolute top-25 start-75 translate-middle badge rounded-pill bg-danger count-product mt-2">0</span>
+                    <h2 class="d-inline mi_carrito ">Mi Carrito</h2>
+                </button>
+            </li>
+        </ul>
 
-      <div class="d-flex justify-content-around flex-wrap text-center">
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/salta1.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Visita Salta</h5>
-            <p class="card-text">Conoce el tren de las nubes!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
+        
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+        
+                <div class="index-main" id="index-main" data-aos="fade-up" data-aos-duration="1000">
+                  
+                    <!-- Notificación -->
+                    <div class="popup-notificacion" id="popupNotificacion"  style="width: 21rem;">
+                      <button class="btn-cerrar" onclick="cerrarNotificacion()">×</button>
+                      <p id="contenidoResena"></p>
+                    </div>
+        
+                    <div class="d-flex justify-content-around flex-wrap text-center gap-4" id="contenedorBotones">
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/salta1.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Visita Salta</h5>
+                            <p class="card-text">Conoce el tren de las nubes!</p>
+                            <p class="card-price m-2">$<span class="precio">500000</span></p>
+                            <div class="d-flex flex-row">
+                           <button class="btn btn-success boton-reserva button" data-id="1">Reservar</button> 
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="La provincia de Salta ofrece paisajes únicos como la Quebrada de las Conchas y los Valles Calchaquíes. Su cultura brilla en pueblos coloniales como Cachi y museos como el MAAM. La gastronomía, con empanadas y vinos de altura, completa una experiencia inolvidable en el noroeste argentino.">Ver más</button>
+                          </div>
+                           
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/jujuy4.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Conoce Jujuy</h5>
+                            <p class="card-text">Conoce el Cerro de los siete colores!</p>
+                            <p class="card-price m-2">$<span class="precio">420000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="2">Reservar</button> 
+                            <button class="btn-popup btn-primary boton-mas" data-resena="Jujuy deslumbra con paisajes únicos como la Quebrada de Humahuaca, las Salinas Grandes y el Cerro de los Siete Colores en Purmamarca. Su cultura andina, viva en sus festividades y pueblos, la convierte en un destino auténtico e inolvidable.">Ver más</button>
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/peritomoreno3.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Visita Perito Moreno</h5>
+                            <p class="card-text">Ven a conocer este Increible Glaciar con nosotros!</p>
+                            <p class="card-price m-2">$<span class="precio">600000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="3">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="El Glaciar Perito Moreno, en Santa Cruz, es una de las joyas de la Patagonia argentina. Con sus imponentes paredes de hielo y espectaculares desprendimientos, ofrece un espectáculo único. Ideal para caminatas sobre hielo y navegar por el Lago Argentino, es un destino inolvidable.">Ver más</button>
+                          </div>
+                        </div>
+                
+                        <!-- 2 -->
+                
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/bariloche2.jpg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Conoce Bariloche</h5>
+                            <p class="card-text">Conoce el majestuoso Hotel Llao Llao en medio del lago!</p>
+                            <p class="card-price m-2">$<span class="precio">720000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="4">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="Bariloche, en la Patagonia argentina, es famosa por sus paisajes de montañas y lagos cristalinos. Con su arquitectura de estilo alpino y su entorno natural, es un destino de ensueño. El Hotel Llao Llao, icónico en la región, combina lujo y naturaleza, ofreciendo vistas panorámicas al Lago Nahuel Huapi y las montañas circundantes. Es el lugar perfecto para disfrutar de actividades al aire libre y relajarse en un entorno exclusivo.">Ver más</button>
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/iguazu.jpg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Visita Iguazu</h5>
+                            <p class="card-text">Conoce la septima maravilla del mundo, las Cataratas del Iguazu!</p>
+                            <p class="card-price m-2">$<span class="precio">850000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="5">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="Las Cataratas del Iguazú, ubicadas en la frontera entre Argentina y Brasil, son una de las maravillas naturales del mundo. Con más de 250 saltos de agua, el espectáculo de su caída es impresionante, especialmente en la famosa Garganta del Diablo. Rodeadas por la selva subtropical, las cataratas ofrecen rutas de senderismo y paseos en bote, convirtiéndolas en un destino imperdible para los amantes de la naturaleza.">Ver más</button>
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/fitz2.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Conoce El Chaltén</h5>
+                            <p class="card-text">Disfruta del maravilloso Fitz Roy!</p>
+                            <p class="card-price m-2">$<span class="precio">570000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="6">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="El Chaltén es la capital nacional del trekking. Rodeado por el majestuoso Monte Fitz Roy y el Cerro Torre, ofrece impresionantes rutas de senderismo con vistas espectaculares. Ideal para los amantes de la naturaleza y la aventura, El Chaltén es un destino que combina paisajes de montaña, glaciares y lagos cristalinos.">Ver más</button>
+                          </div>
+                        </div>
+                
+                        <!-- 3 -->
+                
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/Les_Eclaireurs_Lighthouse.jpg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Visita Ushuaia</h5>
+                            <p class="card-text">Conoce el imponente Faro del Fin del mundo!</p>
+                            <p class="card-price m-2">$<span class="precio">1000000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="7">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="Ushuaia, la ciudad más austral del planeta, se encuentra en Tierra del Fuego, Argentina. Rodeada por montañas, bosques y el Canal Beagle, es un destino único que combina paisajes impresionantes con historia y aventuras al aire libre. Ideal para explorar el Parque Nacional Tierra del Fuego, navegar por el canal o disfrutar de su ambiente patagónico, Ushuaia es un lugar lleno de encanto.">Ver más</button>
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/madryn2.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Conoce Puerto Madryn</h5>
+                            <p class="card-text">Conoce estas increibles ballenas en Puerto Madryn!</p>
+                            <p class="card-price m-2">$<span class="precio">590000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="8">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="Puerto Madryn, en la costa atlántica de Argentina, es conocido por su impresionante fauna marina. Es el lugar ideal para avistar ballenas, lobos marinos y pingüinos, especialmente en la Península Valdés, patrimonio de la humanidad. Además, sus playas y paisajes patagónicos lo convierten en un destino perfecto para los amantes de la naturaleza y el ecoturismo.">Ver más</button>
+                          </div>
+                        </div>
+                        <div class="card" style="width: 22rem;">
+                          <img src="assets/img/mendoza4.jpeg" class="card-img-top card-img" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Visita Mendoza</h5>
+                            <p class="card-text">Conoce La alucinante Cordillera!</p>
+                            <p class="card-price m-2">$<span class="precio">450000</span></p>
+                            <button class="btn btn-success boton-reserva button" data-id="9">Reservar</button>
+                            <button class="btn-popup btn btn-primary boton-mas" data-resena="Mendoza, en el corazón de la región vitivinícola argentina, es famosa por sus bodegas y sus vinos de altura. A los pies de los Andes, ofrece paisajes deslumbrantes, perfectos para el turismo de aventura, como el trekking en el Aconcagua. Su gastronomía y la calidez de su gente hacen de Mendoza un destino ideal para disfrutar de buenos vinos, buena comida y naturaleza.">Ver más</button>
+                          </div>
+                        </div>
+                      </div>
+        
+                </div>
+            </div>
+        
+            <div class="tab-pane fade carrito" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <div class="carrito-productos mb-5">
+                    <span>Su carrito está vació. Ir a Nuestros Viajes!</span>
+                </div>
+        
+                <div class="carrito-vacio table-responsive">
+                    <table class="table table-dark table-hover container">
+                        <thead>
+                            <tr class="text-primary">
+                                <th scope="col">Id</th>
+                                <th scope="col">Viajes</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+        
+        
+        
+                        </tbody>
+                    </table>
+        
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h3 class="itemCartTotal text-black">Total: 0</h3>
+                        </div>
+                        <div>
+                            <button class="btn btn-success" onclick="comprar()">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/jujuy4.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Conoce Jujuy</h5>
-            <p class="card-text">Conoce el Cerro de los siete colores!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/peritomoreno3.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Visita Perito Moreno</h5>
-            <p class="card-text">Ven a conocer este Increible Glaciar con nosotros!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-
-        <!-- 2 -->
-
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/bariloche2.jpg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Conoce Bariloche</h5>
-            <p class="card-text">Conoce el majestuoso Hotel Llao Llao en medio del lago!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/iguazu.jpg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Visita Iguazu</h5>
-            <p class="card-text">Conoce la septima maravilla del mundo, las Cataratas del Iguazu!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/fitz2.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Conoce El Chaltén</h5>
-            <p class="card-text">Disfruta del maravilloso Fitz Roy!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-
-        <!-- 3 -->
-
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/Les_Eclaireurs_Lighthouse.jpg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Visita Ushuaia</h5>
-            <p class="card-text">Conoce el imponente Faro del Fin del mundo!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/madryn2.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Conoce Puerto Madryn</h5>
-            <p class="card-text">Conoce estas increibles ballenas en Puerto Madryn!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-        <div class="card" style="width: 22rem;">
-          <img src="assets/img/mendoza4.jpeg" class="card-img-top card-img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Visita Mendoza</h5>
-            <p class="card-text">Conoce La alucinante Cordillera!</p>
-            <a href="#" class="btn btn-primary boton-reserva">Reservar</a>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Preguntas Frecuentes -->
@@ -184,6 +284,7 @@
     <section>
 
       <h1 id="Preguntas" class="title text-center fonts mb-5">Preguntas frecuentes</h1>
+
       <div class="preguntas">
 
 
@@ -240,26 +341,26 @@
     <section>
       <div class="container mt-3 mb-5 bg-white p-3 rounded col-sm-8 col-lg-6 col-xl-5" id="Consultas">
         <h1 class="text-center fonts">Consultas!</h1>
-        <form action="https://formspree.io/f/mldejdlo" method="post">
+        <form action="https://formspree.io/f/mldejdlo" method="post" id="form">
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Nombre:</label>
-            <input type="text" name="nombre" class="form-control" required id="formGroupExampleInput"
+            <input type="text" name="nombre" class="form-control"  id="formGroupExampleInput"
               placeholder="Coloca tu Nombre aquí">
           </div>
           <div class="mb-3">
             <label for="formGroupExampleInput5" class="form-label">Apellido:</label>
-            <input type="text" name="apellido" class="form-control" required id="formGroupExampleInput5"
+            <input type="text" name="apellido" class="form-control" id="formGroupExampleInput5"
               placeholder="Coloca tu Apellido aquí">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Correo Electronico</label>
-            <input type="email" name="email" class="form-control" required id="exampleFormControlInput1"
+            <input type="email" name="email" class="form-control"  id="exampleFormControlInput1"
               placeholder="nombre@ejemplo.com">
           </div>
           <div class="mb-3">
             <label for="formGroupExampleInput3" class="form-label">Tu Mensaje:</label>
             <!-- <input type="text" name="mensaje" class="form-control" required  id="formGroupExampleInput3" cols="30" rows="10" placeholder="Tu mensaje aqui"> -->
-            <textarea type="text" name="mensaje" class="form-control" required id="formGroupExampleInput3" cols="5"
+            <textarea type="text" name="mensaje" class="form-control"  id="formGroupExampleInput3" cols="5"
               placeholder="Tu mensaje aqui"></textarea>
           </div>
           <div class="text-center">
@@ -360,6 +461,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script src="/js/search.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pop_up.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

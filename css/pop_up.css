@@ -1,0 +1,42 @@
+ /* Botones activadores */
+ .btn-popup {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-popup:hover {
+  background-color: #0056b3;
+}
+
+/* Notificación */
+.popup-notificacion {
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Botón de cierre dentro de la notificación */
+.btn-cerrar {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.btn-cerrar:hover {
+  color: #dc3545;
+}

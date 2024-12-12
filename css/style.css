@@ -32,6 +32,10 @@
     font-family: generica;
     font-size: 3rem;
   }
+
+  .fonts:hover {
+    color: red;
+  }
   
 
  /* scrollbar */
@@ -70,6 +74,14 @@ color: #55b272;
 font-size: 18px;
 }
 
+.boton-api {
+    background-color: #ca1b0f;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: rgb(0, 0, 0) !important;
+    font-weight: 500;
+}
+
 
 
 /*Flecha para hacer la pagina hacia arriba*/
@@ -102,6 +114,16 @@ font-size: 18px;
 
 /*Viajes*/
 
+.mi_carrito {
+    font-size: 30px;
+    color: black;
+    margin-left: 20px;
+}
+
+.mi_carrito:hover {
+    color: red;
+}
+
 .card-img {
     width: 330px;
     position: absolute;
@@ -132,17 +154,37 @@ font-size: 18px;
     text-overflow: ellipsis;
 }
 
+.card-price {
+    width: 150px;
+    position: absolute;
+    height: 40px;
+    top: 360px;
+    left: 100px;
+    font-weight: bold;
+    
+}
+
 .boton-reserva {
     width: 150px;
     position: absolute;
     height: 40px;
-    top: 375px;
+    top: 450px;
     left: 100px;
     
 }
 
+.boton-mas {
+    width: 150px;
+    position: absolute;
+    height: 40px;
+    top: 400px;
+    left: 100px;
+    
+}
+
+
 .card {
-    height: 430px;
+    height: 500px;
     margin-bottom: 3rem;
 }
 
@@ -202,6 +244,57 @@ font-size: 18px;
     .fa-brands {
         margin-right: 10px;
     }
+
+     /* Carrito */
+    
+    
+     .carrito {
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .table__productos {
+        display: flex;
+    }
+    
+    .table__productos>img {
+        width: 250px;
+        height: 200px;
+        border-radius: 6px;
+        margin-right: 20px;
+    }
+    
+    .table__cantidad>input {
+        width: 40px;
+        border: none;
+        outline: 0;
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .hide,
+    .remove {
+        display: none;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .carrito-productos {
+    
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #FFB300;
+        border-radius: 50px;
+        padding: 3px 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
   
 }
 
@@ -230,5 +323,73 @@ font-size: 18px;
         width: 100%;
         height: 450px;
     }
+
+    /* Carrito */
+
+
+    .mi_carrito {
+        font-size: 25px;
+    }
+
+    .nav-pills {
+        margin-bottom: 15px;
+    }
+
+    .carrito {
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .table__productos {
+        display: flex;
+    }
+
+    .table__productos>img {
+        width: 150px;
+        height: 200px;
+        border-radius: 6px;
+        margin-right: 20px;
+    }
+
+    .table__cantidad>input {
+        width: 40px;
+        border: none;
+        outline: 0;
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+
+    .hide,
+    .remove {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .carrito-productos {
+
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #FFB300;
+        border-radius: 50px;
+        padding: 3px 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .carrito-vacio{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
    
 }
