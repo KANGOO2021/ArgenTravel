@@ -114,6 +114,20 @@ font-size: 18px;
 
 /*Viajes*/
 
+.remove {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+    z-index: 1000;
+    text-align: center;
+}
+
+
 .mi_carrito {
     font-size: 30px;
     color: black;

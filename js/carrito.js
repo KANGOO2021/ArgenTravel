@@ -110,7 +110,7 @@ function CarritoTotal() {
   addLocalStorage()
 }
 
-function removeItemCarrito(e) {
+/* function removeItemCarrito(e) {
   const buttonDelete = e.target
   const tr = buttonDelete.closest(".ItemCarrito")
   const title = tr.querySelector('.title').textContent;
@@ -121,12 +121,6 @@ function removeItemCarrito(e) {
     }
   }
 
-  /*  const alert = document.querySelector('.remove')
- 
-   setTimeout(function () {
-     alert.classList.add('remove')
-   }, 2000)
-   alert.classList.remove('remove') */
 
   tr.remove()
   countProduct--;
@@ -134,6 +128,43 @@ function removeItemCarrito(e) {
   CarritoTotal()
   emptyCart()
 }
+ */
+
+function removeItemCarrito(e) {
+  const buttonDelete = e.target;
+  const tr = buttonDelete.closest(".ItemCarrito");
+  const title = tr.querySelector('.title').textContent;
+
+  for (let i = 0; i < carrito.length; i++) {
+    if (carrito[i].title.trim() === title.trim()) {
+      carrito.splice(i, 1); // Eliminar el producto del carrito
+    }
+  }
+
+  tr.remove(); // Eliminar el elemento visual del DOM
+  countProduct--;
+  amountProduct.innerHTML = countProduct;
+  CarritoTotal();
+  emptyCart();
+
+  // Mostrar la alerta de eliminación
+  mostrarAlertaEliminacion();
+}
+
+function mostrarAlertaEliminacion() {
+  const alertDanger = document.querySelector(".alert-danger");
+
+  // Mostrar la alerta
+  alertDanger.classList.remove("remove");
+  alertDanger.classList.add("show");
+
+  // Ocultar la alerta después de 3 segundos
+  setTimeout(() => {
+    alertDanger.classList.remove("show");
+    alertDanger.classList.add("remove");
+  }, 3000);
+}
+
 
 function sumaCantidad(e) {
   const sumaInput = e.target

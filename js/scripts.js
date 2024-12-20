@@ -39,6 +39,47 @@ document.getElementById("form").addEventListener("submit", function(event) {
     contador++; // Aumentar el contador en cada iteración
   });
 
+// Seleccionar el botón y la alerta
+document.addEventListener("DOMContentLoaded", () => {
+    const botonesReservar = document.querySelectorAll(".boton-reserva");
+    const alertSuccess = document.querySelector(".alert-primary");
+
+
+    // Función para mostrar la alerta
+    const mostrarAlerta = () => {
+        alertSuccess.classList.remove("hide");
+        alertSuccess.classList.add("show");
+
+        // Ocultar la alerta después de 3 segundos
+        setTimeout(() => {
+            alertSuccess.classList.remove("show");
+            alertSuccess.classList.add("hide");
+        }, 2000);
+    };
+
+    // Agregar evento a todos los botones "Reservar"
+    botonesReservar.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            mostrarAlerta();
+        });
+    });
+});
+
+function mostrarAlertaEliminacion() {
+    const alertDanger = document.querySelector(".alert-danger");
+
+    // Mostrar la alerta
+    alertDanger.classList.remove("remove");
+    alertDanger.classList.add("show");
+
+    // Ocultar la alerta después de 3 segundos
+    setTimeout(() => {
+        alertDanger.classList.remove("show");
+        alertDanger.classList.add("remove");
+    }, 2000);
+}
+
+
 
 
   
