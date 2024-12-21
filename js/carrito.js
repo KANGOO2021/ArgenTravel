@@ -36,12 +36,6 @@ function addToCarritoItem(e) {
 
 function addItemCarrito(newItem) {
 
-  /*   const alert = document.querySelector('.alert')
-  
-    setTimeout(function () {
-      alert.classList.add('hide')
-    }, 2000)
-    alert.classList.remove('hide') */
 
   const InputElemnto = tbody.getElementsByClassName('input__elemento')
   for (let i = 0; i < carrito.length; i++) {
@@ -110,25 +104,7 @@ function CarritoTotal() {
   addLocalStorage()
 }
 
-/* function removeItemCarrito(e) {
-  const buttonDelete = e.target
-  const tr = buttonDelete.closest(".ItemCarrito")
-  const title = tr.querySelector('.title').textContent;
-  for (let i = 0; i < carrito.length; i++) {
 
-    if (carrito[i].title.trim() === title.trim()) {
-      carrito.splice(i, 1)
-    }
-  }
-
-
-  tr.remove()
-  countProduct--;
-  amountProduct.innerHTML = countProduct;
-  CarritoTotal()
-  emptyCart()
-}
- */
 
 function removeItemCarrito(e) {
   const buttonDelete = e.target;

@@ -67,10 +67,47 @@ const noResultsMessage = document.createElement('div');
 noResultsMessage.id = 'noResults';
 noResultsMessage.style.display = 'none';
 noResultsMessage.style.textAlign = 'center';
-noResultsMessage.style.fontSize = '20px';
-noResultsMessage.style.color = 'red';
+noResultsMessage.style.fontSize = '25px';
+noResultsMessage.style.color = 'black';
+noResultsMessage.style.backgroundColor = 'red';
+noResultsMessage.style.width = '50%';
+noResultsMessage.style.marginLeft = 'auto';
+noResultsMessage.style.marginRight = 'auto';
+noResultsMessage.style.borderRadius = '20px';
+noResultsMessage.style.fontWeight = '500';
+noResultsMessage.style.padding = '5px';
+noResultsMessage.style.marginBottom = '20px';
+
 noResultsMessage.textContent = 'No hay coincidencias';
 document.querySelector('section').appendChild(noResultsMessage);
+
+
+// Obtén el botón "Mi Carrito"
+const carritoButton = document.querySelector('#pills-profile-tab');
+const productButton = document.querySelector('#pills-home-tab');
+
+// Obtén el contenedor del buscador (ajusta el selector a tu HTML real)
+const buscador = document.querySelector('#buscador'); // Asegúrate de tener un ID o clase específica para el buscador
+
+// Evento para ocultar el buscador cuando se presione el botón "Mi Carrito"
+carritoButton.addEventListener('click', function() {
+    if (buscador) {
+        buscador.style.display = 'none'; // Oculta el buscador
+        noResultsMessage.style.display = 'none';
+
+    }
+});
+
+productButton.addEventListener('click', function() {
+    if (buscador) {
+        buscador.style.display = 'block'; // Oculta el buscador
+        resetPackages()
+        document.getElementById('inpuBuscador').value = '';
+    }
+});
+
+
+
 
 
   
