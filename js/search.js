@@ -62,7 +62,7 @@ document.querySelector('input[type="search"]').addEventListener('input', functio
     }
 });
 
-// Crear un mensaje "No hay coincidencias" dinámicamente
+// Crea un mensaje "No hay coincidencias" dinámicamente
 const noResultsMessage = document.createElement('div');
 noResultsMessage.id = 'noResults';
 noResultsMessage.style.display = 'none';
@@ -82,12 +82,12 @@ noResultsMessage.textContent = 'No hay coincidencias';
 document.querySelector('section').appendChild(noResultsMessage);
 
 
-// Obtén el botón "Mi Carrito"
+
+
 const carritoButton = document.querySelector('#pills-profile-tab');
 const productButton = document.querySelector('#pills-home-tab');
+const buscador = document.querySelector('#buscador'); 
 
-// Obtén el contenedor del buscador (ajusta el selector a tu HTML real)
-const buscador = document.querySelector('#buscador'); // Asegúrate de tener un ID o clase específica para el buscador
 
 // Evento para ocultar el buscador cuando se presione el botón "Mi Carrito"
 carritoButton.addEventListener('click', function() {
@@ -100,9 +100,9 @@ carritoButton.addEventListener('click', function() {
 
 productButton.addEventListener('click', function() {
     if (buscador) {
-        buscador.style.display = 'block'; // Oculta el buscador
+        buscador.style.display = 'block'; // Muestra el buscador
         resetPackages()
-        document.getElementById('inpuBuscador').value = '';
+        document.getElementById('inpuBuscador').value = ''; //resetea el input
     }
 });
 
